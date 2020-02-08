@@ -1,3 +1,4 @@
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,85 +7,111 @@ import java.util.*;
 
 public class NewsHeadingTest
 {
-    public static void main(String[] args)
+    @Test
+    public void givenURL_WhenValid_ThenShouldReturnSuccessfully()
     {
+        List<String> newsHeadingsList = new ArrayList();
+        List<Integer> scorePoints = new ArrayList<>();
+
         WebDriver driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", "chromedriver");
-        driver.get("https://news.ycombinator.com/news?p=11");
 
-        List<WebElement> news = driver.findElements(By.cssSelector("tr.athing a.storylink"));
-        List<WebElement> score = driver.findElements(By.cssSelector("tr span.score"));
-        List<String> newsHeading = new ArrayList<String>();
-        List<String> scoreHeading = new ArrayList<String>();
+        driver.get("https://news.ycombinator.com/news");
+        List<WebElement> newsElements = driver.findElements(By.cssSelector("a.storylink"));
+        List<WebElement> scoreElements = driver.findElements(By.cssSelector("tr td span.score"));
+        Map<String, Integer> map = new HashMap<>();
 
-        for (WebElement n : news)
+        for (WebElement webElement : newsElements)
         {
-            newsHeading.add(n.getText());
-        }
-        for (WebElement s : score)
-        {
-            scoreHeading.add(s.getText().substring(0, s.getText().length() - 7));
-        }
-        Map<String, Integer> map = new HashMap<String, Integer>();
-        for (int i = 0; i < scoreHeading.size(); i++)
-        {
-            map.put(newsHeading.get(i), Integer.parseInt(scoreHeading.get(i)));
+            System.out.println(webElement.getText());
+            newsHeadingsList.add(webElement.getText());
         }
 
-        System.out.println(newsHeading);
-        System.out.println(scoreHeading);
-        listOfWord(newsHeading);
-        driver.close();
+        for (WebElement webElement : scoreElements)
+        {
+            System.out.println(webElement.getText().substring(0, webElement.getText().length() - 7));
+            scorePoints.add(Integer.parseInt(webElement.getText().substring(0, webElement.getText().length() - 7)));
+        }
+
+        Map<String, Integer> newsPointMap = new HashMap<>();
+        Iterator<String> newsIterator = newsHeadingsList.iterator();
+        Iterator<Integer> scorePointIterator = scorePoints.iterator();
+
+        while (newsIterator.hasNext() && scorePointIterator.hasNext())
+        {
+            newsPointMap.put(newsIterator.next(), scorePointIterator.next());
+        }
+        System.out.println("Data :size" + newsPointMap.size());
+        newsPointMap.entrySet().stream().forEach(System.out::println);
+        List<String> wordList = listOfWords(newsHeadingsList);
+        wordList.stream().forEach(System.out::println);
+        Map<String, Integer> maxCountWordMap = findMaxCountWord(wordList);
+        String countWordInMap = getMaxCountWordInMap(maxCountWordMap);
+        System.out.println("Most Occured word is :" + countWordInMap);
+        String popularNewsHeading = getPopularNewsHeading(newsPointMap, countWordInMap);
+        System.out.println(popularNewsHeading);
     }
 
-    static List<String> listOfWord(List<String> newsHeading)
+    static List<String> listOfWords(List<String> list)
     {
-        List<String> listOfWords = new ArrayList<>();
-        for (String words : newsHeading)
+        List<String> words = new ArrayList<>();
+
+        for (String s1 : list)
         {
-            String[] arrOfString = words.split(" ");
-            String world = findWord(arrOfString);
-            List<String> l1 = Arrays.asList(arrOfString);
-            listOfWords.addAll(l1);
-            System.out.println(world);
+            String[] arrOfWords = s1.split(" ");
+            List<String> l1 = Arrays.asList(arrOfWords);
+            words.addAll(l1);
         }
-        return listOfWords;
+        return words;
     }
 
-    static String findWord(String[] arr)
+    public static  String getPopularNewsHeading(Map<String, Integer> mapData, String mostOccuredWord)
     {
-        // Create HashMap to store word and it's frequency
-        HashMap<String, Integer> hs = new HashMap<String, Integer>();
-
-        // Iterate through array of words
-        for (int i = 0; i < arr.length; i++)
-        {
-            // If word already exist in HashMap then increase it's count by 1
-            if (hs.containsKey(arr[i]))
-            {
-                hs.put(arr[i], hs.get(arr[i]) + 1);
-            }
-            // Otherwise add word to HashMap
-            else
-            {
-                hs.put(arr[i], 1);
-            }
-        }
-
-        // Create set to iterate over HashMap
-        Set<Map.Entry<String, Integer>> set = hs.entrySet();
-        String key = "";
         int value = 0;
-
-        for (Map.Entry<String, Integer> me : set)
+        String mostPopular="";
+        for (Map.Entry<String, Integer> val : mapData.entrySet())
         {
-            // Check for word having highest frequency
-            if (me.getValue() > value)
+            if (val.getKey().contains(" "+mostOccuredWord+" " ))
             {
-                value = me.getValue();
-                key = me.getKey();
+                if ( val.getValue()>value)
+                {
+                    value=val.getValue();
+                    mostPopular=val.getKey();
+                }
             }
+        }
+        System.out.println("Most populaR TEST DATA:"+mostPopular);
+        return mostPopular;
+    }
+
+    static Map<String, Integer> findMaxCountWord(List<String> wordList)
+    {
+        Map<String, Integer> wordMap = new HashMap<>();
+        for (String i : wordList)
+        {
+            Integer j = wordMap.get(i);
+            wordMap.put(i, (j == null) ? 1 : j + 1);
+        }
+        wordMap.entrySet().stream().forEach(System.out::println);
+        return wordMap;
+    }
+
+    public static String getMaxCountWordInMap(Map<String, Integer> countMap)
+    {
+        String key = "";
+        Integer value = 0;
+        // displaying the occurrence of elements in the arraylist
+        for (Map.Entry<String, Integer> val : countMap.entrySet())
+        {
+            if (val.getValue() > value)
+            {
+                value = val.getValue();
+                key = val.getKey();
+            }
+            System.out.println("Element " + val.getKey() + " " + "occurs : " + val.getValue() + " times");
         }
         return key;
     }
 }
+
+
