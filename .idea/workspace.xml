@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de820874-9cf5-489b-9a0a-c346ffb49803" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/NewsHeading.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/NewsHeadingFunctionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/NewsHeadingTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/NewsHeader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/classes/NewsHeadingTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/NewsHeadingTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/NewsHeadingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/NewsHeadingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +50,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NewsHeadingTest.givenURL_WhenValid_ThenShouldReturnSuccessfully">
+  <component name="RunManager" selected="JUnit.NewsHeadingFunctionTest.givenMethodToCheckCountOfWordsInListIsCorrectOrNot">
     <configuration name="NewsHeader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="NewsHeader" />
       <module name="NewsHeading.test" />
@@ -71,6 +61,16 @@
     <configuration name="NewsHeadingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="NewsHeadingTest" />
       <module name="NewsHeading.test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewsHeadingFunctionTest.givenMethodToCheckCountOfWordsInListIsCorrectOrNot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NewsHeading.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="NewsHeadingFunctionTest" />
+      <option name="METHOD_NAME" value="givenMethodToCheckCountOfWordsInListIsCorrectOrNot" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,25 +94,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpotifyTest.givenApi_WhenPassedToken_ShouldGiveSuccessCode" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="NewsHeading.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SpotifyTest" />
-      <option name="METHOD_NAME" value="givenApi_WhenPassedToken_ShouldGiveSuccessCode" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.NewsHeadingFunctionTest.givenMethodToCheckCountOfWordsInListIsCorrectOrNot" />
         <item itemvalue="JUnit.NewsHeadingTest.givenURL_WhenValid_ThenShouldReturnSuccessfully" />
         <item itemvalue="Application.NewsHeadingTest" />
         <item itemvalue="Application.NewsHeader" />
         <item itemvalue="JUnit.NewsHeadingTest" />
-        <item itemvalue="TestNG.SpotifyTest.givenApi_WhenPassedToken_ShouldGiveSuccessCode" />
       </list>
     </recent_temporary>
   </component>
@@ -134,30 +122,30 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="311" y="58" width="847" height="677" key="#Project_Structure/67.27.1299.741@67.27.1299.741" timestamp="1581063201801" />
-    <state width="1253" height="2" key="GridCell.Tab.0.bottom" timestamp="1581141841902">
+    <state width="1253" height="76" key="GridCell.Tab.0.bottom" timestamp="1581246914568">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="2" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1581141841902" />
-    <state width="1253" height="2" key="GridCell.Tab.0.center" timestamp="1581141841902">
+    <state width="1253" height="76" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1581246914568" />
+    <state width="1253" height="76" key="GridCell.Tab.0.center" timestamp="1581246914568">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="2" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1581141841902" />
-    <state width="1253" height="2" key="GridCell.Tab.0.left" timestamp="1581141841901">
+    <state width="1253" height="76" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1581246914568" />
+    <state width="1253" height="76" key="GridCell.Tab.0.left" timestamp="1581246914567">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="2" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1581141841901" />
-    <state width="1253" height="2" key="GridCell.Tab.0.right" timestamp="1581141841902">
+    <state width="1253" height="76" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1581246914567" />
+    <state width="1253" height="76" key="GridCell.Tab.0.right" timestamp="1581246914568">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="2" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1581141841902" />
+    <state width="1253" height="76" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1581246914568" />
     <state x="205" y="31" key="SettingsEditor" timestamp="1581072300650">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="205" y="31" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1581072300650" />
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1581132537178">
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1581305472445">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1581132537178" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1581305472445" />
     <state x="67" y="27" width="1289" height="741" key="new project wizard" timestamp="1581134662519">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
